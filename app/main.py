@@ -55,7 +55,6 @@ async def login(request: Request):
 async def auth(request: Request):
     try:
         token = await oauth.google.authorize_access_token(request)
-        print("token:", token)
     except OAuthError as e:
         return templates.TemplateResponse(
             name = 'error.html',
